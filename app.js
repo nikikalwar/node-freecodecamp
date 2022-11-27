@@ -1,25 +1,26 @@
-//what exactly is common Js ==> it says every file is a module
-//Modules-->encapsulates the data (binding the data to the function acting on it) in other words only share minimum
+//buffers
+//buffers are used to represent data types of fixed length size
 
-const peter='john';
-var smilga='sone';
+//class is a blueprint to create and initialize objects
 
-//difference between const and var, let
-//const and let are introduced in es6
-//const and let are block scoped
-//function scoped var
-//hoisting for var
-//const needs to be declared and initialized
-//
+import {Buffer} from 'buffer'
 
-const sayHi=()=>{
-    console.log("Say Hi")
-};
+//console.log(buffer.toString());
 
-sayHi();
-'So why this goes unnoticed';
-//so this is comments
-`and this also comments`
-'this is also like comments'
-"I wonder what happens behind the hood for the node.js to ignore it as comments"
+//how to create a small buffer
 
+let newData=Buffer.alloc(10);
+console.log(newData);
+
+//buffers are used for storing raw data-- that is binary data
+//javascript is great at handling string data but not so good at Binary data
+//also this leads to desinging the API to be string based and not to handle binary data
+
+let userPassword="test string";
+let buffer=Buffer.alloc(16);
+buffer.write(userPassword);
+console.log(buffer)
+let stringBuffer=buffer.toString();
+console.log(stringBuffer);
+console.log(typeof buffer);
+console.log(Buffer.isBuffer(buffer))
