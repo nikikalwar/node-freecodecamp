@@ -1,18 +1,12 @@
-//so callbacks what are callbacks
+//so what are modules
 
-//basically callbacks are the functions which get executed after the main function is executed
+//modules are objects which are used by node js to share libraries or code
 
-let objectModels=["DOM","VDOM","BOM"];
+//local
+const dontShare="dont export this values";
 
-const myFunc=(arr,cb)=>{
-    for(let i=0;i<arr.length;i++){
-        const element=arr[i];
-        cb(element)
-    }
-}
+//sharing
+const userName="Niki";
+const adminName="John";
 
-myFunc(objectModels,cb);
-
-function cb(element){
-    console.log(element)
-}
+module.exports={userName,adminName}

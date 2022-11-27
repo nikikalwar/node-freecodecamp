@@ -27,3 +27,22 @@ function doNothing(){
 }
 
 doNothing();
+
+so we have callbacks so why promises
+or whats the difference between callbacks and promises
+
+promises are javascript objects which represent the eventual completion of an asynchronous operation
+//callbacks on the other hand are javascript functions which execute after a particular task is complete
+//promises have inbuilt error handling
+//code is much more structured
+//the coupling is low.
+
+//where is node.js used
+SPA
+real time communications
+Streaming applications,
+real time collaboration tool
+microservices architecture
+Internet of thinngs
+
+it can handle multiple network requests, but can process only one event at a time
