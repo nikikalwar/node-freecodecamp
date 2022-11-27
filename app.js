@@ -1,26 +1,18 @@
-//buffers
-//buffers are used to represent data types of fixed length size
+//so callbacks what are callbacks
 
-//class is a blueprint to create and initialize objects
+//basically callbacks are the functions which get executed after the main function is executed
 
-import {Buffer} from 'buffer'
+let objectModels=["DOM","VDOM","BOM"];
 
-//console.log(buffer.toString());
+const myFunc=(arr,cb)=>{
+    for(let i=0;i<arr.length;i++){
+        const element=arr[i];
+        cb(element)
+    }
+}
 
-//how to create a small buffer
+myFunc(objectModels,cb);
 
-let newData=Buffer.alloc(10);
-console.log(newData);
-
-//buffers are used for storing raw data-- that is binary data
-//javascript is great at handling string data but not so good at Binary data
-//also this leads to desinging the API to be string based and not to handle binary data
-
-let userPassword="test string";
-let buffer=Buffer.alloc(16);
-buffer.write(userPassword);
-console.log(buffer)
-let stringBuffer=buffer.toString();
-console.log(stringBuffer);
-console.log(typeof buffer);
-console.log(Buffer.isBuffer(buffer))
+function cb(element){
+    console.log(element)
+}
